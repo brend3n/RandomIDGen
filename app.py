@@ -37,6 +37,9 @@ g_rid: RandomIdentity = RandomIdentity()
 @rt("/")
 def get():
     return Container(
+        DivLAligned(
+            H1("Built with FastHTML", cls="text-2xl font-bold mb-4 bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 inline-block text-transparent bg-clip-text"),  # Larger title
+        ),
         DivCentered(
             A(
                 UkIcon("github", height=24, width=24),
