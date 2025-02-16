@@ -52,6 +52,15 @@ Push vercel using
 ```
 from the root of the directory
 
+Test vercel locally 
+```bash
+    vercel dev
+```
+from the root of the directory
+
+# Vercel Notes
+For some reason, pushing to the branch breaks the deployment. So, just push above or test locally.
+
 ## Example Output
 
 ```
