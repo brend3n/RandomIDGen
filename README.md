@@ -2,6 +2,10 @@
 
 This project is a Python application that generates random identities. It can be used for testing purposes, creating dummy data, or any other scenario where random identity generation is needed.
 
+# Link to live site:
+
+<a href="https://random-id-gen.vercel.app/" target="_blank">Link to site</a>
+
 # TODO:
 1) Add options to enter City, State, Zip code etc
 2) Integrate email bot
@@ -39,6 +43,14 @@ Run the `app.py` script to generate a random identity:
 ```bash
 python app.py
 ```
+
+# Vercel
+
+Push vercel using 
+```bash
+    vercel --prod
+```
+from the root of the directory
 
 ## Example Output
 
