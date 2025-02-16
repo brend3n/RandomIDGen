@@ -47,7 +47,7 @@ def get():
                 target="_blank",
                 cls="absolute top-4 right-4 hover:scale-110 transition"
             ),
-            H1("Random Identity Generator", cls="text-2xl font-extrabold mb-8"),  # Larger, bolder title
+            H1("Random Identity Generator", cls="text-4xl font-extrabold mb-8"),  # Larger, bolder title
             Div(
                 g_rid.__ft__(),
                 id="name_display",
