@@ -1,73 +1,3 @@
-# from fasthtml.common import *
-# from monsterui.all import *
-# from faker import Faker
-
-# fake = Faker()
-
-# # Ensure MonsterUI theme is set
-# hdrs = Theme.slate.headers(highlightjs=True)
-# app, rt = fast_app(hdrs=hdrs, live=True)
-
-# class RandomIdentity:
-#     def __init__(self):
-#         self.name = fake.name()
-#         self.address = fake.address()
-#         self.email = fake.email()
-#         self.phonenumber = fake.phone_number()
-
-#     def regenerate(self):
-#         self.__init__()
-
-#     def __repr__(self):
-#         return f"Name: {self.name}\nAddress: {self.address}\nEmail: {self.email}\nPhone: {self.phonenumber}"
-    
-#     def __str__(self):
-#         return f"Name: {self.name}\nAddress: {self.address}\nEmail: {self.email}\nPhone: {self.phonenumber}"
-    
-#     def __ft__(self):
-#         return CardContainer(
-#             Card(
-#                 DivVStacked(
-#                     H4(self.name, cls="text-black-700"),  # Dark blue
-#                     P(self.address, cls="text-black-600"),  # Dark yellow
-#                     P(self.email, cls="text-black-500"),  # Standard green
-#                     P(self.phonenumber, cls="text-black-500"),  # Standard red
-#                 ),
-#                 cls=(CardT.primary, "w-full max-w-lg p-8")
-#             ),
-#             cls=ContainerT.lg  # Consistent width container
-#         )
-
-# g_rid: RandomIdentity = RandomIdentity()
-
-# @rt("/")
-# def get():
-#     return Container(
-#         DivCentered(
-#             H1("Random Identity Generator", cls="text-xl font-bold mb-6"),  # Added bottom margin
-#             Div(
-#                 g_rid.__ft__(),
-#                 id="name_display",
-#                 cls="bg-gray-100 p-4 rounded-lg shadow mb-6"  # Added bottom margin
-#             ),
-#             Button(
-#                 "Randomize",
-#                 hx_post="/randomize",
-#                 hx_target="#name_display",
-#                 cls="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded mt-4"  # Added top margin & padding
-#             ),
-#             cls="bg-blue-900 text-white p-8 min-h-screen flex items-center justify-center"
-#         )
-#     )
-
-
-# @rt("/randomize")
-# async def post(req: Request):
-#     new_id = RandomIdentity()
-#     return new_id.__ft__()
-
-# serve()
-
 from fasthtml.common import *
 from monsterui.all import *
 from faker import Faker
@@ -87,12 +17,6 @@ class RandomIdentity:
 
     def regenerate(self):
         self.__init__()
-
-    def __repr__(self):
-        return f"Name: {self.name}\nAddress: {self.address}\nEmail: {self.email}\nPhone: {self.phonenumber}"
-    
-    def __str__(self):
-        return f"Name: {self.name}\nAddress: {self.address}\nEmail: {self.email}\nPhone: {self.phonenumber}"
     
     def __ft__(self):
         return CardContainer(
@@ -114,6 +38,12 @@ g_rid: RandomIdentity = RandomIdentity()
 def get():
     return Container(
         DivCentered(
+            A(
+                UkIcon("github", height=24, width=24),
+                href="https://github.com/brend3n/RandomIDGen",
+                target="_blank",
+                cls="absolute top-4 right-4 hover:scale-110 transition"
+            ),
             H1("Random Identity Generator", cls="text-2xl font-extrabold mb-8"),  # Larger, bolder title
             Div(
                 g_rid.__ft__(),
